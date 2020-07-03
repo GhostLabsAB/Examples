@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>GhostNodes.CustomProcessAssembly.Example_ReplaceText_CustomProcess</AssemblyName>
+    <RootNamespace>GhostNodes.CustomProcessAssembly</RootNamespace>
+    <Version>1.0.0</Version>
+    <Authors>GhostLabs</Authors>
+    <Company>GhostLabs</Company>
+    <Product>GhostNodes</Product>
+    <Description>Custom process adapter for replacing text in a message.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="CHANGELOG.md" />
+    <None Remove="NuGet.Config" />
+    <None Remove="README.md" />
+    <None Remove="Replace Text.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Replace Text.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="$(OutDir)$(TargetName).deps.json">
+      <Pack>true</Pack>
+      <PackagePath>lib\netstandard2.0\</PackagePath>
+      <Visible>false</Visible>
+    </Content>
+    <Content Include="CHANGELOG.md" />
+    <Content Include="README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GhostNodes.Std.BaseAdapter" Version="0.300.1-preview9" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>GhostNodes.DestinationAssembly.Example_File_Destination</AssemblyName>
+    <RootNamespace>GhostNodes.DestinationAssembly</RootNamespace>
+    <Version>1.0.5</Version>
+    <Product>GhostNodes</Product>
+    <Authors>GhostLabs</Authors>
+    <Company>GhostLabs</Company>
+    <Description>Destination adapter for sending messages to the local file system.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="CHANGELOG.md" />
+    <None Remove="Folder.png" />
+    <None Remove="NuGet.Config" />
+    <None Remove="README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="$(OutDir)$(TargetName).deps.json">
+      <Pack>true</Pack>
+      <PackagePath>lib\netstandard2.0\</PackagePath>
+      <Visible>false</Visible>
+    </Content>
+    <Content Include="CHANGELOG.md" />
+    <Content Include="README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Folder.png" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="GhostNodes.Std.BaseAdapter" Version="0.300.1-preview9" />
+  </ItemGroup>
+
+</Project>
